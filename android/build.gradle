@@ -27,7 +27,6 @@ apply plugin: 'kotlin-android'
 
 android {
     namespace "io.abner.flutter_js"
-    minSdk 21
     compileSdkVersion 35
 
     kotlinOptions {
