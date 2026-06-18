@@ -13,9 +13,11 @@ A Javascript engine to use with flutter. It uses quickjs on Android and Javascri
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Your Company' => 'email@example.com' }
   s.source           = { :path => '.' }
-  s.source_files = 'Classes/**/*'
+  # Sources live under the Swift Package layout so the plugin can be consumed
+  # via both CocoaPods and Swift Package Manager (Flutter 3.44+).
+  s.source_files = 'flutter_js/Sources/flutter_js/**/*'
   s.dependency 'Flutter'
-  s.platform = :ios, '8.0'
+  s.platform = :ios, '12.0'
   s.frameworks = 'JavaScriptCore'
   # Flutter.framework does not contain a i386 slice. Only x86_64 simulators are supported.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64' }

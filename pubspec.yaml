@@ -25,7 +25,7 @@ flutter:
         package: io.abner.flutter_js
         pluginClass: FlutterJsPlugin
       ios:
-        pluginClass: FlutterJsPlugin
+        pluginClass: SwiftFlutterJsPlugin
       linux:
         #default_package: flutter_js_linux_win
         pluginClass: FlutterJsPlugin
