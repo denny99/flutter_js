@@ -29,8 +29,15 @@ android {
     compileSdkVersion 34
     namespace "io.abner.flutter_js"
 
+    // Keep Java and Kotlin on the same JVM target. AGP 9 fails the build on a
+    // mismatch, and the consuming app (Flutter 3.44+) compiles Java at 17.
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        jvmTarget = JavaVersion.VERSION_17.toString()
     }
 
     // //quickjs C build disabled for now - crashing with SEGV_MAPERR on ARM based devices
